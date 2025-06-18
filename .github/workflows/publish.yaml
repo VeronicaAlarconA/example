@@ -3,7 +3,7 @@ name: Build and publish python package to nexus
 on:
   push:
     branches:
-      - nexus
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
           TWINE_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
         run: |
-          twine upload --repositoy-url "${{ secrets.NEXUS_URL}}" dist/*.tar.gz dist/*.whl
+          twine upload --repository-url "${{ secrets.NEXUS_URL}}" dist/*.tar.gz dist/*.whl
 
 
 
