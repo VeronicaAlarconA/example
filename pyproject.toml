@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mitlib-ejemplo"
 version = "0.0.1"
-description = "Una libreria de prueba para nexus"
+description = "Una libreria de prueba para nexus que sirva"
 authors = [{ name = "Veronica", email = "tuemail@ejemplo.com" }]
 requires-python = ">=3.6"
 dependencies = []
