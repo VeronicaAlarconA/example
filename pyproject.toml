@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mitlib-ejemplo"
+version = "0.0.1"
+description = "Una libreria de prueba para nexus"
+authors = [{ name = "Veronica", email = "tuemail@ejemplo.com }]
+requires-python = ">=3.6"
+dependencies = []
