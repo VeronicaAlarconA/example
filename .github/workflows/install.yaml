@@ -1,0 +1,28 @@
+name: Test python
+
+on:
+    push:
+        branches:
+          - implements
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout repo
+            uses: actions/checkout@v3
+
+          - name: Set up python
+            uses: actions/setup-python@v4
+            with:
+              python-version: "3.10"
+
+          - name: Intall dependency from nexus
+            env:
+                NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME}}
+                NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD}}
+            run: |
+              pip install milib-ejemplo \
+              --index-url http://${NEXUS_USERNAME}:{NEXUS_PASSWORD}@ec2-44-200-26-1.compute-1.amazonaws.com:8081/repository/example/simple/ \
+              --trusted-host ec2-44-200-26-1.compute-1.amazonaws.com 
